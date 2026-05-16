@@ -111,7 +111,7 @@ img { max-width: 100%; display: block; }
 /* ====== HERO SECTION ====== */
 .hero {
     height: 100vh;
-    background-image: url('../assets/bar-xiumei.webp');
+    background-image: url('./assets/bar-xiumei.webp');
     background-size: cover;
     background-position: center;
     position: relative;
