@@ -19,7 +19,23 @@
             <li><a href="#filosofia">Filosofía</a></li>
             <li><a href="#carta">La Carta</a></li>
         </ul>
+
+        <!-- Botón hamburger (solo visible en móvil) -->
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
+
+    <!-- Overlay menú móvil -->
+    <div class="nav-overlay" id="navOverlay">
+        <ul class="nav-links">
+            <li><a href="#historia" class="nav-overlay-link">Historia</a></li>
+            <li><a href="#filosofia" class="nav-overlay-link">Filosofía</a></li>
+            <li><a href="#carta" class="nav-overlay-link">La Carta</a></li>
+        </ul>
+    </div>
 
     <header class="hero">
         <div class="hero-overlay"></div>
@@ -77,7 +93,7 @@
                     </div>
                 </div>
                 <div class="plato-card">
-                    <img src=".assets/xiu-mei.png" alt="Bocaditos al vapor">
+                    <img src="./assets/xiu-mei.png" alt="Bocaditos al vapor">
                     <div class="plato-info">
                         <h3>Xiu Mei (Bocaditos al vapor)</h3>
                         <p class="tipo">Oriental</p>
@@ -101,69 +117,91 @@
     </section>
 
     <a href="https://wa.me/51940459432?text=Hi,%20i%20want%20to%20make%20a%20reservation" class="cta-flotante">Reserva</a>
- 
-    
-<footer class="footer">
-    <div class="container footer-grid">
-        <div class="footer-brand">
-            <a href="#" class="footer-logo">
-                <img src="./assets/XIUMEI.png" alt="Logo XIU MEI">
-            </a>
-            <p>
-                Alta Cocina Oriental Andina donde el rigor del oriente se encuentra 
-                con la mística y pureza de los Andes.
-            </p>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="footer-logo">
+                    <img src="./assets/XIUMEI.png" alt="Logo XIU MEI">
+                </a>
+                <p>
+                    Alta Cocina Oriental Andina donde el rigor del oriente se encuentra 
+                    con la mística y pureza de los Andes.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Navegación</h3>
+                <ul>
+                    <li><a href="#historia">Historia</a></li>
+                    <li><a href="#filosofia">Filosofía</a></li>
+                    <li><a href="#experiencia">Experiencia</a></li>
+                    <li><a href="#ubicacion">Ubicación</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contacto">
+                <h3>Contacto</h3>
+
+                <a href="#ubicacion" class="footer-link">
+                    <span class="footer-icon">◆</span>
+                    <span>Cusco, Perú</span>
+                </a>
+
+                <a href="https://wa.me/51940459432" class="footer-link" target="_blank">
+                    <span class="footer-icon">✦</span>
+                    <span>+51 940 459 432</span>
+                </a>
+
+                <a href="mailto:Xiumeiplateros@gmail.com" class="footer-link">
+                    <span class="footer-icon">✉</span>
+                    <span>Xiumeiplateros@gmail.com</span>
+                </a>
+
+                <p class="footer-texto">
+                    <span class="footer-icon">◷</span>
+                    <span>Lun - Dom | 12:00 pm - 11:00 pm</span>
+                </p>
+            </div>
+
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Tripadvisor</a></li>
+                </ul>
+            </div>
+
         </div>
 
-        <div class="footer-links">
-            <h3>Navegación</h3>
-            <ul>
-                <li><a href="#historia">Historia</a></li>
-                <li><a href="#filosofia">Filosofía</a></li>
-                <li><a href="#experiencia">Experiencia</a></li>
-                <li><a href="#ubicacion">Ubicación</a></li>
-            </ul>
+        <div class="footer-bottom">
+            <p>© 2026 XIU MEI | Todos los derechos reservados.</p>
         </div>
+    </footer>
 
-<div class="footer-contacto">
-    <h3>Contacto</h3>
+    <!-- Script para el menú hamburger -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navOverlay = document.getElementById('navOverlay');
+        const overlayLinks = document.querySelectorAll('.nav-overlay-link');
 
-    <a href="#ubicacion" class="footer-link">
-        <span class="footer-icon">◆</span>
-        <span>Cusco, Perú</span>
-    </a>
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            document.body.style.overflow = navOverlay.classList.contains('active') ? 'hidden' : '';
+        });
 
-    <a href="https://wa.me/51940459432" class="footer-link" target="_blank">
-        <span class="footer-icon">✦</span>
-        <span>+51 940 459 432</span>
-    </a>
-
-    <a href="mailto:Xiumeiplateros@gmail.com" class="footer-link">
-        <span class="footer-icon">✉</span>
-        <span>Xiumeiplateros@gmail.com</span>
-    </a>
-
-    <p class="footer-texto">
-        <span class="footer-icon">◷</span>
-        <span>Lun - Dom | 12:00 pm - 11:00 pm</span>
-    </p>
-</div>
-
-        <div class="footer-social">
-            <h3>Síguenos</h3>
-            <ul>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Tripadvisor</a></li>
-            </ul>
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        <p>© 2026 XIU MEI | Todos los derechos reservados.</p>
-    </div>
-</footer>
+        // Cerrar el overlay al hacer click en un enlace
+        overlayLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    </script>
 
 </body>
+</html>
 </html>
